@@ -1,0 +1,10 @@
+.zoom{
+	transition: transform .6s;
+}
+.zoom:hover{
+	-ms-transform: scale(1.8);
+	-webkit-transform: scale(1.8);
+	transform: scale(1.8); 
+	cursor: pointer;
+	z-index: 99999;
+}
