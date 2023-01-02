@@ -1,8 +1,8 @@
 <div class="statbox widget box box-shadow">
     <div class="form-row" style="padding:10px !important;">
-        <div  style="padding:10px !important;" id="table_retrieve_house">
+        <div  style="padding:10px !important;" id="table_retrieve_house" class="table-responsive">
             <h5 class="mt-3 mb-3">Retreive House List</h5>
-            <table class="table table-responsive table-hover table-bordered dataTable no-footer" style="width: 100%;" id="retrieve-house-table" role="grid" aria-describedby="table-Datatable_info">
+            <table class="table table-hover table-bordered dataTable no-footer" style="width: 100%;" id="retrieve-house-table" role="grid" aria-describedby="table-Datatable_info">
                 <thead>
                     <tr>
                         <th>#ID</th>
@@ -48,7 +48,7 @@
             var table = $('#retrieve-house-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "ajax": "{{ route('operasional.retrieveHousing') }}",
+                "ajax": "{{ url('api/retrieveHousing') }}",
                 "type": "GET",
                 "dataSrc":"data",
                 "columns": [

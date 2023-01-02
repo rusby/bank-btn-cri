@@ -245,7 +245,7 @@
         const fd = new FormData(this);
         $("#btn-savedata_sme").text('Adding...');
         $.ajax({
-            url: "{{ route('operasional.smeLoanInsertApplication') }}",
+            url: "{{ url('api/smeLoanInsertApplication') }}",
             method: "POST",
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             data: fd,
@@ -274,7 +274,7 @@
     //     var tahun = splitbt[1];
 
     //     $.ajax({
-    //         url : "{{ route('operasional.housingLoanApplicationList') }}",
+    //         url : "{{ url('api/housingLoanApplicationList') }}",
     //         method : "GET",
     //         data : {
     //             channel:channel,
@@ -305,7 +305,7 @@
 
     function getDataEmployment(){
         $.ajax({
-            url : "{{ route('operasional.employmentType') }}",
+            url : "{{ url('api/employmentType') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
@@ -321,7 +321,7 @@
 
     function getDataProperties(){
         $.ajax({
-            url : "{{ route('operasional.retrieveHousing') }}",
+            url : "{{ url('api/retrieveHousing') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
@@ -344,7 +344,7 @@
 
     function getDataProvice(){
         $.ajax({
-            url : "{{ route('operasional.searchProvince') }}",
+            url : "{{ url('api/searchProvince') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
@@ -378,7 +378,7 @@
 
     function getDataKabupaten(i_prop, part){
         $.ajax({
-           url : "{{ route('operasional.searchCity') }}",
+           url : "{{ url('api/searchCity') }}",
             method : "GET",
             data : {i_prop:i_prop},
             dataType : 'json',
@@ -414,7 +414,7 @@
 
     function getDataKecamatan(i_kot, part){
         $.ajax({
-           url : "{{ route('operasional.searchDistrict') }}",
+           url : "{{ url('api/searchDistrict') }}",
             method : "GET",
             data : {i_kot:i_kot},
             dataType : 'json',
@@ -450,7 +450,7 @@
 
     function getDataKelurahan(i_kec, part){
         $.ajax({
-           url : "{{ route('operasional.searchSubDistrict') }}",
+           url : "{{ url('api/searchSubDistrict') }}",
             method : "GET",
             data : {i_kec:i_kec},
             dataType : 'json',

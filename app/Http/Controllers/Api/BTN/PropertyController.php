@@ -43,30 +43,6 @@ class PropertyController extends Controller
         // var_dump($getdatatoken );
         return   $getdatatoken;
     }
-   
-    function propertytab(){
-        return view('pages.operasional.collection.properties.index');
-    } 
-
-    function retrievehousingtab(){
-        return view('pages.operasional.collection.properties.retrievehouse');
-    }
-
-    function retrievehousetypetab(){
-        return view('pages.operasional.collection.properties.retrievehouse-type');
-    }
-
-    function retrievehouselottab(){
-        return view('pages.operasional.collection.properties.retrievehouse-lot');
-    }
-
-    function retrievehousenearbytab(){
-        return view('pages.operasional.collection.properties.retrievehouse-nearby');
-    }
-
-    function searchdatapropertiestab(){
-        return view('pages.operasional.collection.properties.search-data');
-    }
 
     function propertySearch(Request $request){
         $getdatatoken = $this->getDataToken();

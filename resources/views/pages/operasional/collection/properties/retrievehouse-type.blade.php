@@ -56,12 +56,13 @@
 
     function getDataProperties(){
         $.ajax({
-            url : "{{ route('operasional.retrieveHousing') }}",
+            url : "{{ url('api/retrieveHousing') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
                 var $el = $("#select_properties");
                 $el.empty(); 
+                $el.append($("<option></option>").attr("value", "").text("Pilih"));
                 $.each(json.data , function (key, value) {
                     $el.append($("<option></option>").attr({"value": value.ID, "data-cabang": value.CABANG}).text(value.NAMA_PROPER));
                 })
@@ -75,7 +76,7 @@
         var halKe    = $("#halKe").val();
         $("#btn-savedata").text('Adding...');
         $.ajax({
-            url : "{{ route('operasional.retrieveHouseType') }}",
+            url : "{{ url('api/retrieveHouseType') }}",
             method : "GET",
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},            
             data : {

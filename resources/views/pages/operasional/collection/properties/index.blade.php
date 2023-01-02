@@ -31,7 +31,7 @@
         var table = $('#retrieve-house-table').dataTable({
 			"processing": true,
 			"serverSide": true,
-			"ajax": "{{ route('operasional.retrieveHousing') }}",
+			"ajax": "{{ url('api/retrieveHousing') }}",
 			"type": "GET",
 			"dataSrc":"data",
 			"columns": [
@@ -106,7 +106,7 @@
 
     function getDataAllRretrieveHouse(){
         $.ajax({
-           url : "{{ route('operasional.retrieveHousing') }}",
+           url : "{{ url('api/retrieveHousing') }}",
             method : "GET",
             dataType : 'json',
             beforeSend: function() {
@@ -115,6 +115,7 @@
                 console.log(json);
                 var $el = $("#select_properties");
                 $el.empty(); 
+                $el.append($("<option></option>").attr("value", "").text("Pilih"));
                 $.each(json.data , function (key, value) {
                     $el.append($("<option></option>").attr("value", value.ID).text(value.NAMA_PROPER));
                 })
@@ -125,7 +126,7 @@
     function getDataRetrieveHouse(){
         var proper_id = $("#select_properties").val();
         var halKe = $("#halKe").val();
-        var url = "{{ route('operasional.retrieveHouseType') }}";
+        var url = "{{ url('api/retrieveHouseType') }}";
         $.ajax({
             url : url,
             method : "GET",

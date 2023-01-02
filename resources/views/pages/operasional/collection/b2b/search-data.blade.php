@@ -138,7 +138,7 @@
 <script>
      $(document).ready(function (){
         $.ajax({
-            url : "{{ route('operasional.searchProvince') }}",
+            url : "{{ url('api/searchProvince') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
@@ -175,7 +175,7 @@
             var table = $('#table-result-prop').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "ajax": "{{ route('operasional.searchProvince') }}",
+                "ajax": "{{ url('api/searchProvince') }}",
                 "type": "GET",
                 "dataSrc":"data",
                 "columns": [
@@ -282,7 +282,7 @@
 
     function getDataProvice(){
         $.ajax({
-            url : "{{ route('operasional.searchProvince') }}",
+            url : "{{ url('api/searchProvince') }}",
             method : "GET",
             dataType : 'json',
             success: function(json){
@@ -300,7 +300,7 @@
         var i_prop = document.getElementById("select_prop").value;
         getDataKabupaten(i_prop);
         $.ajax({
-            url : "{{ route('operasional.searchCity') }}",
+            url : "{{ url('api/searchCity') }}",
             method : "GET",
             data : {i_prop:i_prop},
             beforeSend: function() {
@@ -322,7 +322,7 @@
     function getDataKabupaten(i_prop){
         clearDataTable();
         $.ajax({
-           url : "{{ route('operasional.searchCity') }}",
+           url : "{{ url('api/searchCity') }}",
             method : "GET",
             data : {i_prop:i_prop},
             dataType : 'json',
@@ -341,7 +341,7 @@
         var i_kot = document.getElementById("select_city").value;
         getDataKecamatan(i_kot);
         $.ajax({
-            url : "{{ route('operasional.searchDistrict') }}",
+            url : "{{ url('api/searchDistrict') }}",
             method : "GET",
             data : {i_kot:i_kot},
             beforeSend: function() {
@@ -367,7 +367,7 @@
         clearDataTable();
 
         $.ajax({
-           url : "{{ route('operasional.searchDistrict') }}",
+           url : "{{ url('api/searchDistrict') }}",
             method : "GET",
             data : {i_kot:i_kot},
             dataType : 'json',
@@ -385,7 +385,7 @@
     function selectKecamatan(){
         var i_kec = document.getElementById("select_district").value;
         $.ajax({
-            url : "{{ route('operasional.searchSubDistrict') }}",
+            url : "{{ url('api/searchSubDistrict') }}",
             method : "GET",
             data : {i_kec:i_kec},
             beforeSend: function() {
@@ -421,7 +421,7 @@
 
         if(act == "postcode_action"){
             $.ajax({
-                url : "{{ route('operasional.searchPostCodeLocation') }}",
+                url : "{{ url('api/searchPostCodeLocation') }}",
                 method : "GET",
                 data : {poscode:poscode},
                 beforeSend: function() {
@@ -444,7 +444,7 @@
             });
         }else{
             $.ajax({
-                url : "{{ route('operasional.searchBranchOffice') }}",
+                url : "{{ url('api/searchBranchOffice') }}",
                 method : "GET",
                 data : {
                     i_prop:i_prop,

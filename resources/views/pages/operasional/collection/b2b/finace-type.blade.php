@@ -17,7 +17,7 @@
             var table = $('#financetype-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "ajax": "{{ route('operasional.financeType') }}",
+                "ajax": "{{ url('api/financeType') }}",
                 "type": "GET",
                 "dataSrc":"data",
                 "columns": [

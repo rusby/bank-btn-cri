@@ -1,15 +1,8 @@
-<style>
-    .modal-detail {
-        width: 750px;
-        margin: auto;
-    }
-</style>
-
 <h5 class="mt-3 mb-3" style="padding:10px !important;">Retrieve House Lot</h5>
 <div class="statbox widget box box-shadow">
     <div class="form-row" style="padding:10px !important;">
         <div class="form-group col-md-12">
-            <label for="select_option">Select Properti</label>
+            <label for="select-properties">Select Properti</label>
             <select name="select-properties" class="form-control select-properties" id="select_retrieve-house" onchange="selectRetrieveHouse()">
                 <option value="">Pilih </option>               
             </select>
@@ -91,7 +84,7 @@
     getDataAllRetrieveHouse();
     function getDataAllRetrieveHouse(){
         $.ajax({
-           url : "{{ route('operasional.retrieveHousing') }}",
+           url : "{{ url('api/retrieveHousing') }}",
             method : "GET",
             dataType : 'json',
             beforeSend: function() {
@@ -100,6 +93,7 @@
                 console.log(json);
                 var $el = $("#select_retrieve-house");
                 $el.empty(); 
+                $el.append($("<option></option>").attr("value", "").text("Pilih"));
                 $.each(json.data , function (key, value) {
                     $el.append($("<option></option>").attr("value", value.ID).text(value.NAMA_PROPER));
                 })
@@ -114,7 +108,7 @@
 
     function getDataRetrieveHouseType(proper_id){
         $.ajax({
-           url : "{{ route('operasional.retrieveHouseType') }}",
+           url : "{{ url('api/retrieveHouseType') }}",
             method : "GET",
             dataType : 'json',
             beforeSend: function() {
@@ -123,6 +117,7 @@
                 console.log(json);
                 var $el = $("#select_retrieve-housetype");
                 $el.empty(); 
+                $el.append($("<option></option>").attr("value", "").text("Pilih"));
                 $.each(json.data , function (key, value) {
                     $el.append($("<option></option>").attr("value", value.ID).text(value.NAMA));
                 })
@@ -134,7 +129,7 @@
         $("#table-retrieve-house-type-lot").show();
         var tipeRumah_id = $("#select_retrieve-housetype").val();
         $.ajax({
-           url : "{{ route('operasional.retrieveHouseLot') }}",
+           url : "{{ url('api/retrieveHouseLot') }}",
             method : "GET",
             data : {
                 tipeRumah_id:tipeRumah_id,
@@ -143,7 +138,6 @@
             beforeSend: function() {
             },
             success: function(json){
-                // console.log(data);
                 $("#table-result-retrieve-houselot").DataTable({
                     data: json.data,
                     "columns": [
@@ -185,7 +179,7 @@
         $("#table-retrieve-house-type-lot").hide();
         $("#table-retrieve-house-type-lot_detail").show();
         $.ajax({
-           url : "{{ route('operasional.retrieveHouseLotById') }}",
+           url : "{{ url('api/retrieveHouseLotById') }}",
             method : "GET",
             data : {
                 kavling_id:kavling_id,

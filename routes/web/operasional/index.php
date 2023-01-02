@@ -52,21 +52,7 @@ Route::group(['prefix' => 'operasional', 'as' => 'operasional.', 'middleware' =>
 	Route::get('operasional/housingloanapplicationtab', 'BTN\B2BController@housingloanapplicationtab')->name('housingloanapplicationtab');
 	Route::get('operasional/smeloantypeapplicationtab', 'BTN\B2BController@smeloantypeapplicationtab')->name('smeloantypeapplicationtab');
 
-	Route::get('operasional/financeType', 'BTN\B2BController@financeType')->name('financeType');
-	Route::get('operasional/loanType', 'BTN\B2BController@loanType')->name('loanType');
-	Route::get('operasional/employmentType', 'BTN\B2BController@employmentType')->name('employmentType');
-	Route::get('operasional/searchProvince', 'BTN\B2BController@searchProvince')->name('searchProvince');
-
-	Route::get('operasional/searchCity', 'BTN\B2BController@searchCity')->name('searchCity');
-	Route::get('operasional/searchDistrict', 'BTN\B2BController@searchDistrict')->name('searchDistrict');
-	Route::get('operasional/searchSubDistrict', 'BTN\B2BController@searchSubDistrict')->name('searchSubDistrict');
-	Route::get('operasional/searchPostCodeLocation', 'BTN\B2BController@searchPostCodeLocation')->name('searchPostCodeLocation');
-	Route::get('operasional/searchBranchOffice', 'BTN\B2BController@searchBranchOffice')->name('searchBranchOffice');
-	
-	Route::post('operasional/housingLoanInsertApplicationNonstock', 'BTN\B2BController@housingLoanInsertApplicationNonstock')->name('housingLoanInsertApplicationNonstock');
-	Route::get('operasional/housingLoanApplicationList', 'BTN\B2BController@housingLoanApplicationList')->name('housingLoanApplicationList');
-	Route::post('operasional/smeLoanInsertApplication', 'BTN\B2BController@smeLoanInsertApplication')->name('smeLoanInsertApplication');
-
+	// 
 	//BTN Property
 		
 	Route::get('operasional/propertytab', 'BTN\PropertyController@propertytab')->name('propertytab');
@@ -77,34 +63,36 @@ Route::group(['prefix' => 'operasional', 'as' => 'operasional.', 'middleware' =>
 	Route::get('operasional/searchdatapropertiestab', 'BTN\PropertyController@searchdatapropertiestab')->name('searchdatapropertiestab');
 
 
-	Route::get('operasional/propertySearch', 'BTN\PropertyController@propertySearch')->name('propertySearch');
-	Route::get('operasional/retrieveHousing', 'BTN\PropertyController@retrieveHousing')->name('retrieveHousing');
-	Route::get('operasional/retrieveHousingById', 'BTN\PropertyController@retrieveHousingById')->name('retrieveHousingById');
-	Route::get('operasional/retrieveHouseType', 'BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
-	Route::get('operasional/retrieveHouseTypeById', 'BTN\PropertyController@retrieveHouseTypeById')->name('retrieveHouseTypeById');
-	Route::get('operasional/retrieveHouseLot', 'BTN\PropertyController@retrieveHouseLot')->name('retrieveHouseLot');
-	Route::get('operasional/retrieveHouseLotById', 'BTN\PropertyController@retrieveHouseLotById')->name('retrieveHouseLotById');
-	Route::get('operasional/retrieveDeveloperById', 'BTN\PropertyController@retrieveDeveloperById')->name('retrieveDeveloperById');
-	Route::get('operasional/retrieveNearbyHousing', 'BTN\PropertyController@retrieveNearbyHousing')->name('retrieveNearbyHousing');
-
-	// BTN Submission
-	Route::get('operasional/initialEntry', 'BTN\SubmissionController@initialEntry')->name('initialEntry');
-	Route::get('operasional/submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
-	Route::get('operasional/personalInformation', 'BTN\SubmissionController@personalInformation')->name('personalInformation');
-	Route::get('operasional/spouseInformation', 'BTN\SubmissionController@spouseInformation')->name('spouseInformation');
-	Route::get('operasional/jobInformation', 'BTN\SubmissionController@jobInformation')->name('jobInformation');
-	Route::get('operasional/loanApplication', 'BTN\SubmissionController@loanApplication')->name('loanApplication');
-	Route::get('operasional/uploadDocument', 'BTN\SubmissionController@uploadDocument')->name('uploadDocument');
-	Route::get('operasional/removeDocument', 'BTN\SubmissionController@removeDocument')->name('removeDocument');
-	Route::get('operasional/confirmDocument', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
-	Route::get('operasional/submitFinal', 'BTN\SubmissionController@submitFinal')->name('submitFinal');
-	Route::get('operasional/entryDetail', 'BTN\SubmissionController@entryDetail')->name('entryDetail');
-	Route::get('operasional/entryTracking', 'BTN\SubmissionController@entryTracking')->name('entryTracking');
-	
-	// BTN Simulation
 	Route::get('operasional/simulationtab', 'BTN\SimulationController@simulationtab')->name('simulationtab');
-	Route::get('operasional/simulationHousingLoanConventional', 'BTN\SimulationController@simulationHousingLoanConventional')->name('simulationHousingLoanConventional');
-	Route::get('operasional/simulationHousingLoanSharia', 'BTN\SimulationController@simulationHousingLoanSharia')->name('simulationHousingLoanSharia');
+	Route::get('operasional/submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
+
+
+	// Route::get('operasional/propertySearch', 'BTN\PropertyController@propertySearch')->name('propertySearch');
+	// Route::get('operasional/retrieveHousing', 'BTN\PropertyController@retrieveHousing')->name('retrieveHousing');
+	// Route::get('operasional/retrieveHousingById', 'BTN\PropertyController@retrieveHousingById')->name('retrieveHousingById');
+	// Route::get('operasional/retrieveHouseType', 'BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
+	// Route::get('operasional/retrieveHouseTypeById', 'BTN\PropertyController@retrieveHouseTypeById')->name('retrieveHouseTypeById');
+	// Route::get('operasional/retrieveHouseLot', 'BTN\PropertyController@retrieveHouseLot')->name('retrieveHouseLot');
+	// Route::get('operasional/retrieveHouseLotById', 'BTN\PropertyController@retrieveHouseLotById')->name('retrieveHouseLotById');
+	// Route::get('operasional/retrieveDeveloperById', 'BTN\PropertyController@retrieveDeveloperById')->name('retrieveDeveloperById');
+	// Route::get('operasional/retrieveNearbyHousing', 'BTN\PropertyController@retrieveNearbyHousing')->name('retrieveNearbyHousing');
+
+	// // BTN Submission
+	// Route::get('operasional/initialEntry', 'BTN\SubmissionController@initialEntry')->name('initialEntry');
+	// Route::get('operasional/personalInformation', 'BTN\SubmissionController@personalInformation')->name('personalInformation');
+	// Route::get('operasional/spouseInformation', 'BTN\SubmissionController@spouseInformation')->name('spouseInformation');
+	// Route::get('operasional/jobInformation', 'BTN\SubmissionController@jobInformation')->name('jobInformation');
+	// Route::get('operasional/loanApplication', 'BTN\SubmissionController@loanApplication')->name('loanApplication');
+	// Route::get('operasional/uploadDocument', 'BTN\SubmissionController@uploadDocument')->name('uploadDocument');
+	// Route::get('operasional/removeDocument', 'BTN\SubmissionController@removeDocument')->name('removeDocument');
+	// Route::get('operasional/confirmDocument', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
+	// Route::get('operasional/submitFinal', 'BTN\SubmissionController@submitFinal')->name('submitFinal');
+	// Route::get('operasional/entryDetail', 'BTN\SubmissionController@entryDetail')->name('entryDetail');
+	// Route::get('operasional/entryTracking', 'BTN\SubmissionController@entryTracking')->name('entryTracking');
+	
+	// // BTN Simulation
+	// Route::get('operasional/simulationHousingLoanConventional', 'BTN\SimulationController@simulationHousingLoanConventional')->name('simulationHousingLoanConventional');
+	// Route::get('operasional/simulationHousingLoanSharia', 'BTN\SimulationController@simulationHousingLoanSharia')->name('simulationHousingLoanSharia');
 
 	// Route::post('/bt2b/FynanceType', 'Collection\CollectionController@FynanceType')->name('FynanceType');
 

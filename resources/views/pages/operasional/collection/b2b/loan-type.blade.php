@@ -15,7 +15,7 @@
             var table = $('#loantype-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "ajax": "{{ route('operasional.loanType') }}",
+                "ajax": "{{ url('api/loanType') }}",
                 "type": "GET",
                 "dataSrc":"data",
                 "columns": [

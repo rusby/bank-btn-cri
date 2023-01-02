@@ -15,7 +15,7 @@
             var table = $('#employment-table').DataTable({
                 "processing": true,
                 "serverSide": true,
-                "ajax": "{{ route('operasional.employmentType') }}",
+                "ajax": "{{ url('api/employmentType') }}",
                 "type": "GET",
                 "dataSrc":"data",
                 "columns": [
