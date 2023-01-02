@@ -76,6 +76,7 @@ Route::get('retrieveHouseLotById', 'BTN\PropertyController@retrieveHouseLotById'
 Route::get('retrieveDeveloperById', 'BTN\PropertyController@retrieveDeveloperById')->name('retrieveDeveloperById');
 Route::get('retrieveNearbyHousing', 'BTN\PropertyController@retrieveNearbyHousing')->name('retrieveNearbyHousing');
 
+
 // BTN Submission
 Route::get('initialEntry', 'BTN\SubmissionController@initialEntry')->name('initialEntry');
 Route::get('submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
