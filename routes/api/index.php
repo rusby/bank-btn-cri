@@ -78,15 +78,14 @@ Route::get('retrieveNearbyHousing', 'BTN\PropertyController@retrieveNearbyHousin
 
 
 // BTN Submission
-Route::get('initialEntry', 'BTN\SubmissionController@initialEntry')->name('initialEntry');
-Route::get('submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
-Route::get('personalInformation', 'BTN\SubmissionController@personalInformation')->name('personalInformation');
-Route::get('spouseInformation', 'BTN\SubmissionController@spouseInformation')->name('spouseInformation');
-Route::get('jobInformation', 'BTN\SubmissionController@jobInformation')->name('jobInformation');
-Route::get('loanApplication', 'BTN\SubmissionController@loanApplication')->name('loanApplication');
-Route::get('uploadDocument', 'BTN\SubmissionController@uploadDocument')->name('uploadDocument');
+Route::post('initial-entry', 'Api\BTN\SubmissionController@initialEntry')->name('initialEntry');
+Route::post('personal-information', 'Api\BTN\SubmissionController@personalInformation')->name('personalInformation');
+Route::post('spouse-information', 'Api\BTN\SubmissionController@spouseInformation')->name('spouseInformation');
+Route::post('job-information', 'Api\BTN\SubmissionController@jobInformation')->name('jobInformation');
+Route::post('loan-application', 'Api\BTN\SubmissionController@loanApplication')->name('loanApplication');
+Route::post('upload-document', 'Api\BTN\SubmissionController@uploadDocument')->name('uploadDocument');
 Route::get('removeDocument', 'BTN\SubmissionController@removeDocument')->name('removeDocument');
-Route::get('confirmDocument', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
+Route::post('confirm-document', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
 Route::get('submitFinal', 'BTN\SubmissionController@submitFinal')->name('submitFinal');
 Route::get('entryDetail', 'BTN\SubmissionController@entryDetail')->name('entryDetail');
 Route::get('entryTracking', 'BTN\SubmissionController@entryTracking')->name('entryTracking');

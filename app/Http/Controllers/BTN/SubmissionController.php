@@ -5,6 +5,8 @@ namespace App\Http\Controllers\BTN;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use DataTables;
+
 class SubmissionController extends Controller
 {
     public function getDataToken()
@@ -41,7 +43,7 @@ class SubmissionController extends Controller
         return   $getdatatoken;
     }
 
-    function initialEntry(){
+    function initialEntry(Request $request){
         $getdatatoken = $this->getDataToken();
         $token  =  $getdatatoken['tokendata']; 
         $timestamps  =  $getdatatoken['timestamps']; 
@@ -52,8 +54,8 @@ class SubmissionController extends Controller
         $data = '1234567891011121314151617';
         $externalid = str_shuffle($data);
        	$requestbody =  json_encode(array(
-            "id_properti"=>"",
-            "type_pengajuan"=>""
+            "id_properti"=>$request->id_properti,
+            "type_pengajuan"=>$request->type_pengajuan,
         ));
         $sha256 =  strtolower(hash('sha256', $requestbody));
         $plaintex = 'POST:/btnproperti/snap/v1/submission/initial-entry:'.$token.':'.$sha256.':'.$timestamps;
@@ -79,6 +81,34 @@ class SubmissionController extends Controller
 
     function submissiontab(){
         return view('pages.operasional.collection.submission.index');
+    }
+
+    function initialentrytab(){
+        return view('pages.operasional.collection.submission.initial-entry');
+    }
+
+    function personalinformationtab(){
+        return view('pages.operasional.collection.submission.personal-information');
+    }
+
+    function spouseinformationtab(){
+        return view('pages.operasional.collection.submission.spouse-information');
+    }
+
+    function jobinformationtab(){
+        return view('pages.operasional.collection.submission.job-information');
+    }
+
+    function loanapplicationtab(){
+        return view('pages.operasional.collection.submission.loan-application');
+    }
+
+    function uploaddocumenttab(){
+        return view('pages.operasional.collection.submission.upload-document');
+    }
+
+    function confirmdocumenttab(){
+        return view('pages.operasional.collection.submission.confirm-document');
     }
 
     function personalInformation(){
@@ -211,6 +241,8 @@ class SubmissionController extends Controller
         echo "<pre>";
         print_r($result);
         echo "<pre>";
+
+        
     }
 
     function loanApplication(){
