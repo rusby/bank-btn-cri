@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BTN;
+namespace App\Http\Controllers\Api\BTN;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -65,7 +65,7 @@ class SimulationController extends Controller
             "sk_bga_flting"=>$request->sk_bga_flting
         ));
 
-        var_dump($requestbody);die;
+        // var_dump($requestbody);die;
 
         $sha256 =  strtolower(hash('sha256', $requestbody));
         $plaintex = 'POST:/btnproperti/snap/v1/conventional/housing-loan-simulation:'.$token.':'.$sha256.':'.$timestamps;
@@ -111,7 +111,7 @@ class SimulationController extends Controller
             "lama_pinjaman"=>$request->lama_pinjaman,
             "margin_total"=>$request->margin_total          
         ));
-        var_dump($requestbody);die;
+        // var_dump($requestbody);die;
         $sha256 =  strtolower(hash('sha256', $requestbody));
         $plaintex = 'POST:/btnproperti/snap/v1/sharia/housing-loan-simulation:'.$token.':'.$sha256.':'.$timestamps;
         $signature = base64_encode(hash_hmac('sha512', 	$plaintex, $secretkey, true));

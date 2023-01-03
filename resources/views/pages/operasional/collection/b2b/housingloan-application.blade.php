@@ -1,5 +1,5 @@
 
-<h5 class="mt-3 mb-3" style="padding:10px !important;">Housing Loan Applicaation List</h5>
+<h5 class="mt-3 mb-3 list-housing" style="padding:10px !important;">Housing Loan Applicaation List</h5>
 <div class="statbox widget box box-shadow">
     <div class="form-row " id="form-getdata-housing-loan" style="padding:10px !important;">
         <div class="form-group col-md-12 form-channel">
@@ -44,7 +44,6 @@
                     <select name="properties" class="form-control properties" id="properties" onchange="selectProperties()">
                         <option value="">Pilih </option>
                     </select>
-                    <!-- <input type="text" class="form-control" name="properties" placeholder="properties" id="properties"> -->
                 </div>
                 <div class="form-group col-md-6 form-url_properties">
                     <label for="url_properties">Url Properties</label>
@@ -250,6 +249,7 @@
     flatpickr('[name=bulan_tahun]', config_bth)
 
     function tambahDataHousingLoan(){
+        $(".list-housing").text("Insert Housing Loan Applicaation Non Stock");
         $("#form-getdata-housing-loan").hide();
         $("#table-houseloan_list").hide();
         $("#tambah-data-housingloan").show();
@@ -330,8 +330,8 @@
 
     function selectProperties(){
         var i_prpt = $("#properties").val();
-        var cabang = $("#properties").find(':selected').attr('data-cabang')
-        var i_prpt = $("#cabang").val(cabang).prop( "disabled", true );  
+        // var cabang = $("#properties").find(':selected').attr('data-cabang')
+        // var i_prpt = $("#cabang").val(cabang).prop( "disabled", true );  
         // getDataBranch(i_prpt);
     }
     

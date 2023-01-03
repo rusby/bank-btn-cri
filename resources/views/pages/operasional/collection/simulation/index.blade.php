@@ -38,8 +38,7 @@
 		evt.currentTarget.className += " active";       
 	} 
    
-    function getDataConventional(){
-      
+    function getDataConventional(){      
         $("#table-conventional").show();
         var jenis_simulasi = $("#jenis_simulasi").val();
         var jenis_suku_bunga = $("#jenis_suku_bunga").val();
@@ -52,7 +51,7 @@
         var sk_bga_flting = $("#suku_bunga_fiting").val();
         
         $.ajax({
-            url : "{{ route('operasional.simulationHousingLoanConventional') }}",
+            url : "{{ url('api/simulationHousingLoanConventional') }}",
             method : "GET",
             data : {
                 jenis_simulasi:jenis_simulasi,
@@ -126,7 +125,7 @@
         var margin_total = $("#margin_total_sharia").val();
         
         $.ajax({
-            url : "{{ route('operasional.simulationHousingLoanSharia') }}",
+            url : "{{ url('api/simulationHousingLoanSharia') }}",
             method : "GET",
             data : {
                 jenis_simulasi:jenis_simulasi,

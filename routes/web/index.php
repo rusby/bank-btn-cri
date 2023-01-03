@@ -79,9 +79,9 @@ Route::post('/cri/collection_export_tabulasi', 'CRIController@exportTabulasiCRI'
 
 // Route::get('/get_token', 'BTN\B2BController@getDataToken')->name('get_token');
 // Route::get('searchBranchOffice', 'BTN\B2BController@searchBranchOffice')->name('searchBranchOffice');
-Route::get('housingLoanInsertApplicationNonstock', 'BTN\B2BController@housingLoanInsertApplicationNonstock')->name('housingLoanInsertApplicationNonstock');
-Route::get('housingLoanApplicationList', 'BTN\B2BController@housingLoanApplicationList')->name('housingLoanApplicationList');
-Route::get('smeLoanInsertApplication', 'BTN\B2BController@smeLoanInsertApplication')->name('smeLoanInsertApplication');
+// Route::get('housingLoanInsertApplicationNonstock', 'BTN\B2BController@housingLoanInsertApplicationNonstock')->name('housingLoanInsertApplicationNonstock');
+// Route::get('housingLoanApplicationList', 'BTN\B2BController@housingLoanApplicationList')->name('housingLoanApplicationList');
+// Route::get('smeLoanInsertApplication', 'BTN\B2BController@smeLoanInsertApplication')->name('smeLoanInsertApplication');
 // Route::get('retrieveHouseLot', 'BTN\PropertyController@retrieveHouseLot')->name('retrieveHouseLot');
 // Route::get('retrieveHouseType', 'BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
 // Route::get('retrieveHouseType', 'BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
