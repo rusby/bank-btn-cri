@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BTN;
+namespace App\Http\Controllers\Api\BTN;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

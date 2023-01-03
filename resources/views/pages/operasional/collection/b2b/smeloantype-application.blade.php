@@ -161,7 +161,7 @@
                         <input type="text" class="form-control" name="omset_usaha" placeholder="Nama Tempat Usaha" id="omset_usaha">
                     </div>         
                     <div class="form-group col-md-6 form-plafon_kur">
-                        <label for="plafon_kur">Plaafon KUR</label>
+                        <label for="plafon_kur">Plafon KUR</label>
                         <input type="text" class="form-control" name="plafon_kur" placeholder="Plaafon KUR" id="plafon_kur">
                     </div>
                     <div class="form-group col-md-6 form-tujuan_kur">
@@ -234,14 +234,12 @@
  <script>
     getDataProperties();
     getDataProvice();
-    getDataEmployment();
 
     flatpickr('#tanggal_lahir', {dateFormat: "Y-m-d"});
     flatpickr('#tanggal_lahir_pasangan', {dateFormat: "Y-m-d"});
     
     $("#form_smehousing").submit(function(e) {
         e.preventDefault();
-        // var tanggal_lahir = $('#tanggal_lahir').val();
         const fd = new FormData(this);
         $("#btn-savedata_sme").text('Adding...');
         $.ajax({
@@ -266,59 +264,6 @@
         $("#tambah-data-housingloan").show();
     }
    
-    // function getDataAction(){
-    //     var channel = $("#channel").val();
-    //     var bt = $("#bulan_tahun").val();
-    //     var splitbt = bt.split(",");
-    //     var bulan = splitbt[0];
-    //     var tahun = splitbt[1];
-
-    //     $.ajax({
-    //         url : "{{ url('api/housingLoanApplicationList') }}",
-    //         method : "GET",
-    //         data : {
-    //             channel:channel,
-    //             bulan:bulan,
-    //             tahun:tahun,
-    //         },
-    //         beforeSend: function() {
-    //         },
-    //         dataType : 'json',
-    //         success: function(json){
-    //             console.log(json);
-    //             $("#table-houseloan_list").DataTable({
-    //                 data: json.data,
-    //                 "columns": [
-    //                     {data: 'id', name: 'id'},
-    //                     {data: 'nm_lnkp', name: 'nm_lnkp'},
-    //                     {data: 'cbng', name: 'cbng'},
-    //                     {data: 'tgl_msk', name: 'tgl_msk'},
-    //                     {data: 'stts', name: 'stts'},
-    //                     {data: 'nl_dstj', name: 'nl_dstj'},
-    //                     {data: 'tgl_updt', name: 'tgl_updt'},
-    //                 ]
-    //             })
-    //         }
-    //     });
-      
-    // }
-
-    function getDataEmployment(){
-        $.ajax({
-            url : "{{ url('api/employmentType') }}",
-            method : "GET",
-            dataType : 'json',
-            success: function(json){
-                var $el = $("#jenis_pekerjaan");
-                $el.empty(); 
-                $el.append($("<option></option>").attr("value", "").text("Pilih"));
-                $.each(json.data , function (key, value) {
-                    $el.append($("<option></option>").attr("value", value.kd).text(value.nl));
-                })
-            }
-        });
-    }
-
     function getDataProperties(){
         $.ajax({
             url : "{{ url('api/retrieveHousing') }}",
@@ -337,8 +282,8 @@
 
     function selectProperties(){
         var i_prpt = $("#properties").val();
-        var cabang = $("#properties").find(':selected').attr('data-cabang')
-        var i_prpt = $("#cabang").val(cabang).prop( "disabled", true );  
+        // var cabang = $("#properties").find(':selected').attr('data-cabang')
+        // var i_prpt = $("#cabang").val(cabang).prop( "disabled", true );  
         // getDataBranch(i_prpt);
     } 
 
@@ -355,6 +300,7 @@
                     $el.append($("<option></option>").attr("value", value.id).text(value.n));
                 });
                 var $el_usaha = $("#select_prop_usaha");
+                $el_usaha.append($("<option></option>").attr("value", "").text("Pilih"));
                 $el_usaha.empty(); 
                 $.each(json.data , function (key, value) {
                     $el_usaha.append($("<option></option>").attr("value", value.id).text(value.n));

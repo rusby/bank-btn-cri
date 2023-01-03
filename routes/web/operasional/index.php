@@ -44,28 +44,24 @@ Route::group(['prefix' => 'operasional', 'as' => 'operasional.', 'middleware' =>
 	// BTN COLLECTION
 	// BTN B2B
 	Route::get('/get_token', 'BTN\B2BController@getDataToken')->name('get_token');
-	Route::get('operasional/b2btab', 'BTN\B2BController@b2btab')->name('b2btab');
-	Route::get('operasional/financetypetab', 'BTN\B2BController@financetypetab')->name('financetypetab');
-	Route::get('operasional/loantypetab', 'BTN\B2BController@loantypetab')->name('loantypetab');
-	Route::get('operasional/employmenttypetab', 'BTN\B2BController@employmenttypetab')->name('employmenttypetab');
-	Route::get('operasional/searchdatatab', 'BTN\B2BController@searchdatatab')->name('searchdatatab');
-	Route::get('operasional/housingloanapplicationtab', 'BTN\B2BController@housingloanapplicationtab')->name('housingloanapplicationtab');
-	Route::get('operasional/smeloantypeapplicationtab', 'BTN\B2BController@smeloantypeapplicationtab')->name('smeloantypeapplicationtab');
+	Route::get('b2btab', 'BTN\B2BController@b2btab')->name('b2btab');
+	Route::get('financetypetab', 'BTN\B2BController@financetypetab')->name('financetypetab');
+	Route::get('loantypetab', 'BTN\B2BController@loantypetab')->name('loantypetab');
+	Route::get('employmenttypetab', 'BTN\B2BController@employmenttypetab')->name('employmenttypetab');
+	Route::get('searchdatatab', 'BTN\B2BController@searchdatatab')->name('searchdatatab');
+	Route::get('housingloanapplicationtab', 'BTN\B2BController@housingloanapplicationtab')->name('housingloanapplicationtab');
+	Route::get('smeloantypeapplicationtab', 'BTN\B2BController@smeloantypeapplicationtab')->name('smeloantypeapplicationtab');
 
-	// 
 	//BTN Property
-		
-	Route::get('operasional/propertytab', 'BTN\PropertyController@propertytab')->name('propertytab');
-	Route::get('operasional/retrievehousingtab', 'BTN\PropertyController@retrievehousingtab')->name('retrievehousingtab');
-	Route::get('operasional/retrievehousetypetab', 'BTN\PropertyController@retrievehousetypetab')->name('retrievehousetypetab');
-	Route::get('operasional/retrievehouselottab', 'BTN\PropertyController@retrievehouselottab')->name('retrievehouselottab');
-	Route::get('operasional/retrievehousenearbytab', 'BTN\PropertyController@retrievehousenearbytab')->name('retrievehousenearbytab');
-	Route::get('operasional/searchdatapropertiestab', 'BTN\PropertyController@searchdatapropertiestab')->name('searchdatapropertiestab');
+	Route::get('propertytab', 'BTN\PropertyController@propertytab')->name('propertytab');
+	Route::get('retrievehousingtab', 'BTN\PropertyController@retrievehousingtab')->name('retrievehousingtab');
+	Route::get('retrievehousetypetab', 'BTN\PropertyController@retrievehousetypetab')->name('retrievehousetypetab');
+	Route::get('retrievehouselottab', 'BTN\PropertyController@retrievehouselottab')->name('retrievehouselottab');
+	Route::get('retrievehousenearbytab', 'BTN\PropertyController@retrievehousenearbytab')->name('retrievehousenearbytab');
+	Route::get('searchdatapropertiestab', 'BTN\PropertyController@searchdatapropertiestab')->name('searchdatapropertiestab');
 
-
-	Route::get('operasional/simulationtab', 'BTN\SimulationController@simulationtab')->name('simulationtab');
-	Route::get('operasional/submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
-
+	Route::get('simulationtab', 'BTN\SimulationController@simulationtab')->name('simulationtab');
+	Route::get('submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
 
 	// Route::get('operasional/propertySearch', 'BTN\PropertyController@propertySearch')->name('propertySearch');
 	// Route::get('operasional/retrieveHousing', 'BTN\PropertyController@retrieveHousing')->name('retrieveHousing');

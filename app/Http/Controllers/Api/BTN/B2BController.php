@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BTN;
+namespace App\Http\Controllers\Api\BTN;
 
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
@@ -191,7 +191,6 @@ class B2BController extends Controller
     }
     
     function searchCity(Request $request){
-        // var_dump($request->i_prop);die;
         $getdatatoken = $this->getDataToken();
         $token  =  $getdatatoken['tokendata']; 
         $timestamps  =  $getdatatoken['timestamps']; 
@@ -398,126 +397,126 @@ class B2BController extends Controller
         $fl_rkng_krn = "";
         $ext_fl_rkng_krn = "";
 
-        // if ($_FILES['file_ktp']['size'] != 0 && $_FILES['file_ktp']['error'] != 0)
-        // {
-        //     $file_ktp = $request->file('file_ktp');
-        //     $dataFileKtp = $this->uploadFileLoan($file_ktp);
-        //     $fl_ktp = $dataFileKtp['fileBase64'];
-        //     $ext_fl_ktp = $dataFileKtp['extFile'];
-        // }
+        if (!empty($_FILES['file_ktp']['size']) && $_FILES['file_ktp']['error'] === UPLOAD_ERR_OK)
+        {
+            $file_ktp = $request->file('file_ktp');
+            $dataFileKtp = $this->uploadFileLoan($file_ktp);
+            $fl_ktp = $dataFileKtp['fileBase64'];
+            $ext_fl_ktp = $dataFileKtp['extFile'];
+        }
 
-        // if ($_FILES['file_slip_penghasilan']['size'] != 0 && $_FILES['file_slip_penghasilan']['error'] != 0)
-        // {
-        //     $file_slip_penghasilan = $request->file('file_slip_penghasilan');
-        //     $FilePenghasilan = $this->uploadFileLoan($file_slip_penghasilan);
-        //     $fl_slp_pghsln = $FilePenghasilan['fileBase64'];
-        //     $ext_fl_slp_pghsln = $FilePenghasilan['extFile'];
-        // }
+        if (!empty($_FILES['file_slip_penghasilan']['size']) && $_FILES['file_slip_penghasilan']['error'] === UPLOAD_ERR_OK)
+        {
+            $file_slip_penghasilan = $request->file('file_slip_penghasilan');
+            $FilePenghasilan = $this->uploadFileLoan($file_slip_penghasilan);
+            $fl_slp_pghsln = $FilePenghasilan['fileBase64'];
+            $ext_fl_slp_pghsln = $FilePenghasilan['extFile'];
+        }
 
-        // if ($_FILES['file_pasphoto']['size'] != 0 && $_FILES['file_pasphoto']['error'] != 0)
-        // {
-        //     $file_pasphoto = $request->file('file_pasphoto');
-        //     $FilePasPoto = $this->uploadFileLoan($file_pasphoto);
-        //     $fl_ps_ft = $FilePasPoto['fileBase64'];
-        //     $ext_fl_ps_ft = $FilePasPoto['extFile'];
-        // }
+        if (!empty($_FILES['file_pasphoto']['size']) && $_FILES['file_pasphoto']['error'] === UPLOAD_ERR_OK)
+        {
+            $file_pasphoto = $request->file('file_pasphoto');
+            $FilePasPoto = $this->uploadFileLoan($file_pasphoto);
+            $fl_ps_ft = $FilePasPoto['fileBase64'];
+            $ext_fl_ps_ft = $FilePasPoto['extFile'];
+        }
 
-        // if ($_FILES['file_rekening_koran']['size'] != 0 && $_FILES['file_rekening_koran']['error'] != 0)
-        // {
-        //     $file_rekening_koran = $request->file('file_rekening_koran');
-        //     $FileRekKoran = $this->uploadFileLoan($file_rekening_koran);
-        //     $fl_rkng_krn = $FileRekKoran['fileBase64'];
-        //     $ext_fl_rkng_krn = $FileRekKoran['extFile'];
-        // }
+        if (!empty($_FILES['file_rekening_koran']['size']) && $_FILES['file_rekening_koran']['error'] === UPLOAD_ERR_OK)
+        {
+            $file_rekening_koran = $request->file('file_rekening_koran');
+            $FileRekKoran = $this->uploadFileLoan($file_rekening_koran);
+            $fl_rkng_krn = $FileRekKoran['fileBase64'];
+            $ext_fl_rkng_krn = $FileRekKoran['extFile'];
+        }
       
-        $requestbody =  json_encode(array( 
-            "App_Key"=>"tkW3WMcuVteEo5GGJbZy",
-            "ch"=>"CIRIUM",
-            "i_prpt"=>"1384007",
-            "url_prpt"=>"Megalord v2",
-            "i_cbg"=>"00005",
-            "typ_pgjn"=>"Konvensional",
-            "jns_pgjn"=>"1",
-            "nl_pgjn"=>"500000000",
-            "nm_dpn"=>"FADELS",
-            "nm_tgh"=>"",
-            "nm_blk"=>"",
-            "no_ktp"=>"8237382838090123",
-            "tpt_lhr"=>"JAKARTA",
-            "tgl_lhr"=>"1990-09-19",
-            "almt"=>"JAKARTA SELATAN",
-            "rt"=>"001",
-            "rw"=>"03",
-            "pos"=>"22384",
-            "i_prop"=>"13",
-            "i_kot"=>"1306",
-            "i_kec"=>"130607",
-            "i_kel"=>"1306072005",
-            "no_telp"=>"",
-            "no_hp1"=>"081823829398",
-            "no_hp2"=>"",
-            "no_hp3"=>"",
-            "eml"=>"test.gmail@gmail.com",
-            "nm_prshn"=>"PT. BCA INDONESIA",
-            "jns_pkrjn"=>"20",
-            "pghsln"=>"4000000",
-            "bya_rmh_tng"=>"",
-            "pgrln_ln"=>"",
-            "fl_ktp"=>"AAXCBD",
-            "ext_fl_ktp"=>"png",
-            "fl_slp_pghsln"=>"AAXCBD",
-            "ext_fl_slp_pghsln"=>"png",
-            "fl_ps_ft"=>"AAXCBD",
-            "ext_fl_ps_ft"=>"png",
-            "fl_rkng_krn"=>"AAXCBD",
-            "ext_fl_rkng_krn"=>"png"
-         ));
-
-        // $requestbody =  json_encode(array(  
-        //     "app_key"=>$request->channel,
-        //     "ch"=>$request->channel,
-        //     "i_prpt"=>$request->properties,
-        //     "url_prpt"=>$request->url_properties,
+        // $requestbody =  json_encode(array( 
+        //     "App_Key"=>"tkW3WMcuVteEo5GGJbZy",
+        //     "ch"=>"CIRIUM",
+        //     "i_prpt"=>"1384007",
+        //     "url_prpt"=>"Megalord v2",
         //     "i_cbg"=>"00005",
-        //     // "i_cbg"=>$request->cabang,
-        //     "typ_pgjn"=>$request->type_pengajuan,
-        //     "jns_pgjn"=>$request->jenis_pengajuan,
-        //     "nl_pgjn"=>$request->nilai_pengajuan,
-        //     "nm_dpn"=>$request->nama_depan,
-        //     "nm_tgh"=>$request->nama_tengah,
-        //     "nm_blk"=>$request->nama_belakang,
-        //     "no_ktp"=>$request->nomor_ktp,
-        //     "tpt_lhr"=>$request->tempat_lahir,
-        //     "tgl_lhr"=>$request->tanggal_lahir,
-        //     "almt"=>$request->alamat,
-        //     "rt"=>$request->rt,
-        //     "rw"=>$request->rw,
-        //     "pos"=>$request->kodepos,
-        //     "i_prop"=>$request->i_prop,
-        //     "i_kot"=>$request->i_city,
-        //     "i_kec"=>$request->i_district,
-        //     "i_kel"=>$request->i_subdistrict,
-        //     "no_telp"=>$request->no_telp,
-        //     "no_hp1"=>$request->nohp1,
-        //     "no_hp2"=>$request->nohp2,
-        //     "no_hp3"=>$request->nohp3,
-        //     "eml"=>$request->email,
-        //     "nm_prshn"=>$request->nama_perusahaan,
-        //     "jns_pkrjn"=>$request->jenis_pekerjaan,
-        //     "pghsln"=>$request->penghasilan,
-        //     "bya_rmh_tng"=>$request->biaya_rumahtangga,
-        //     "pgrln_ln"=>$request->pengeluaran,
-        //     "fl_ktp"=>$fl_ktp,
-        //     "ext_fl_ktp"=>$ext_fl_ktp,
-        //     "fl_slp_pghsln"=>$fl_slp_pghsln,
-        //     "ext_fl_slp_pghsln"=>$ext_fl_slp_pghsln,
-        //     "fl_ps_ft"=>$fl_ps_ft,
-        //     "ext_fl_ps_ft"=>$ext_fl_ps_ft,
-        //     "fl_rkng_krn"=>$fl_rkng_krn,
-        //     "ext_fl_rkng_krn"=>$ext_fl_rkng_krn,
+        //     "typ_pgjn"=>"Konvensional",
+        //     "jns_pgjn"=>"1",
+        //     "nl_pgjn"=>"500000000",
+        //     "nm_dpn"=>"FADELS",
+        //     "nm_tgh"=>"",
+        //     "nm_blk"=>"",
+        //     "no_ktp"=>"8237382838090123",
+        //     "tpt_lhr"=>"JAKARTA",
+        //     "tgl_lhr"=>"1990-09-19",
+        //     "almt"=>"JAKARTA SELATAN",
+        //     "rt"=>"001",
+        //     "rw"=>"03",
+        //     "pos"=>"22384",
+        //     "i_prop"=>"13",
+        //     "i_kot"=>"1306",
+        //     "i_kec"=>"130607",
+        //     "i_kel"=>"1306072005",
+        //     "no_telp"=>"",
+        //     "no_hp1"=>"081823829398",
+        //     "no_hp2"=>"",
+        //     "no_hp3"=>"",
+        //     "eml"=>"test.gmail@gmail.com",
+        //     "nm_prshn"=>"PT. BCA INDONESIA",
+        //     "jns_pkrjn"=>"20",
+        //     "pghsln"=>"4000000",
+        //     "bya_rmh_tng"=>"",
+        //     "pgrln_ln"=>"",
+        //     "fl_ktp"=>"AAXCBD",
+        //     "ext_fl_ktp"=>"png",
+        //     "fl_slp_pghsln"=>"AAXCBD",
+        //     "ext_fl_slp_pghsln"=>"png",
+        //     "fl_ps_ft"=>"AAXCBD",
+        //     "ext_fl_ps_ft"=>"png",
+        //     "fl_rkng_krn"=>"AAXCBD",
+        //     "ext_fl_rkng_krn"=>"png"
         // ));
 
-        var_dump($requestbody);
+        $requestbody =  json_encode(array(  
+            "app_key"=>$request->channel,
+            "ch"=>$request->channel,
+            "i_prpt"=>$request->properties,
+            "url_prpt"=>$request->url_properties,
+            "i_cbg"=>"00005",
+            // "i_cbg"=>$request->cabang,
+            "typ_pgjn"=>$request->type_pengajuan,
+            "jns_pgjn"=>$request->jenis_pengajuan,
+            "nl_pgjn"=>$request->nilai_pengajuan,
+            "nm_dpn"=>$request->nama_depan,
+            "nm_tgh"=>$request->nama_tengah,
+            "nm_blk"=>$request->nama_belakang,
+            "no_ktp"=>$request->nomor_ktp,
+            "tpt_lhr"=>$request->tempat_lahir,
+            "tgl_lhr"=>$request->tanggal_lahir,
+            "almt"=>$request->alamat,
+            "rt"=>$request->rt,
+            "rw"=>$request->rw,
+            "pos"=>$request->kodepos,
+            "i_prop"=>$request->i_prop,
+            "i_kot"=>$request->i_city,
+            "i_kec"=>$request->i_district,
+            "i_kel"=>$request->i_subdistrict,
+            "no_telp"=>$request->no_telp,
+            "no_hp1"=>$request->nohp1,
+            "no_hp2"=>$request->nohp2,
+            "no_hp3"=>$request->nohp3,
+            "eml"=>$request->email,
+            "nm_prshn"=>$request->nama_perusahaan,
+            "jns_pkrjn"=>$request->jenis_pekerjaan,
+            "pghsln"=>$request->penghasilan,
+            "bya_rmh_tng"=>$request->biaya_rumahtangga,
+            "pgrln_ln"=>$request->pengeluaran,
+            "fl_ktp"=>$fl_ktp,
+            "ext_fl_ktp"=>$ext_fl_ktp,
+            "fl_slp_pghsln"=>$fl_slp_pghsln,
+            "ext_fl_slp_pghsln"=>$ext_fl_slp_pghsln,
+            "fl_ps_ft"=>$fl_ps_ft,
+            "ext_fl_ps_ft"=>$ext_fl_ps_ft,
+            "fl_rkng_krn"=>$fl_rkng_krn,
+            "ext_fl_rkng_krn"=>$ext_fl_rkng_krn,
+        ));
+
+
         $sha256 =  strtolower(hash('sha256', $requestbody));
         $plaintex = 'POST:/btnproperti/snap/v1/b2b/housing-loan/insert-application/non-stock:'.$token.':'.$sha256.':'.$timestamps;
         $signature = base64_encode(hash_hmac('sha512', 	$plaintex, $secretkey, true));
@@ -535,9 +534,15 @@ class B2BController extends Controller
         
         $response = $this->callAPI($method, $url, $requestbody, $array_header, $timestamps);
         $result = json_decode($response);
-        echo "<pre>";
-        print_r($result);
-        echo "<pre>";
+        if ($result->message == 'Success - OK') {
+            if(!empty($result->data)){
+                $data = $result->data; 
+            }else{
+                $data = []; 
+            }
+        } else {
+            $data = []; 
+        }
     }
 
     function housingLoanApplicationList(Request $request){
@@ -589,31 +594,49 @@ class B2BController extends Controller
         }
 
         return Datatables::of($data)->addIndexColumn()->toJson(true);
-        // echo "<pre>";
-        // print_r($result->message);
-        // echo "<pre>";
     }
 
     function smeLoanInsertApplication(Request $request){
-        $fileNamektp = $request->file('foto_ktp')->getClientOriginalExtension();
-        $foto_ktp = pathinfo($fileNamektp, PATHINFO_FILENAME);
-        $fKtp_ext = pathinfo($fileNamektp, PATHINFO_EXTENSION);
-		$fileNamektp->storeAs('public/upload/loan', $fileNamektp);
+        $foto_ktp = " ";
+        $fKtp_ext = " ";
+        $foto_debitur = " ";
+        $fDebitur_ext = " ";
+        $foto_npwp = " ";
+        $fNpwp_ext = " ";
+        $foto_izinUsaha = " ";
+        $fIzinUsaha_ext = " ";
 
-        $fileDebitur = $request->file('foto_debitur')->getClientOriginalExtension();
-        $foto_debitur = pathinfo($fileDebitur, PATHINFO_FILENAME);
-        $fDebitur_ext = pathinfo($fileDebitur, PATHINFO_EXTENSION);
-		$fileDebitur->storeAs('public/upload/loan', $fileDebitur);
+        if (!empty($_FILES['foto_ktp']['size']) && $_FILES['foto_ktp']['error'] === UPLOAD_ERR_OK)
+        {
+            $foto_ktp = $request->file('foto_ktp');
+            $dataFileKtp = $this->uploadFileLoan($foto_ktp);
+            $foto_ktp = $dataFileKtp['fileBase64'];
+            $fKtp_ext = $dataFileKtp['extFile'];
+        }
 
-        $fileNpwp = $request->file('foto_npwp')->getClientOriginalExtension();
-        $foto_npwp = pathinfo($fileNpwp, PATHINFO_FILENAME);
-        $fNpwp_ext = pathinfo($fileNpwp, PATHINFO_EXTENSION);
-		$fileNpwp->storeAs('public/upload/loan', $fileNpwp);
+        if (!empty($_FILES['foto_debitur']['size']) && $_FILES['foto_debitur']['error'] === UPLOAD_ERR_OK)
+        {
+            $foto_debitur = $request->file('foto_debitur');
+            $fileDebitur = $this->uploadFileLoan($foto_debitur);
+            $foto_debitur = $fileDebitur['fileBase64'];
+            $fDebitur_ext = $fileDebitur['extFile'];
+        }
 
-        $filefoto_izin_usaha = $request->file('foto_izin_usaha')->getClientOriginalExtension();
-        $foto_izinUsaha = pathinfo($filefoto_izin_usaha, PATHINFO_FILENAME);
-        $fIzinUsaha_ext = pathinfo($filefoto_izin_usaha, PATHINFO_EXTENSION);
-		$filefoto_izin_usaha->storeAs('public/upload/loan', $filefoto_izin_usaha);
+        if (!empty($_FILES['foto_npwp']['size']) && $_FILES['foto_npwp']['error'] === UPLOAD_ERR_OK)
+        {
+            $foto_npwp = $request->file('foto_npwp');
+            $FileNPWP = $this->uploadFileLoan($foto_npwp);
+            $foto_npwp = $FileNPWP['fileBase64'];
+            $fNpwp_ext = $FileNPWP['extFile'];
+        }
+
+        if (!empty($_FILES['foto_izin_usaha']['size']) && $_FILES['foto_izin_usaha']['error'] === UPLOAD_ERR_OK)
+        {
+            $foto_izin_usaha = $request->file('foto_izin_usaha');
+            $FileIzinUsaha = $this->uploadFileLoan($foto_izin_usaha);
+            $foto_izinUsaha = $FileIzinUsaha['fileBase64'];
+            $fIzinUsaha_ext = $FileIzinUsaha['extFile'];
+        }
 
         $getdatatoken = $this->getDataToken();
         $token  =  $getdatatoken['tokendata']; 
@@ -624,7 +647,6 @@ class B2BController extends Controller
 
         $data = '1234567891011121314151617';
         $externalid = str_shuffle($data);
-        
        	$requestbody =  json_encode(array(
             "access_key"=>$request->access_key,
             "channel"=>$request->channel,
@@ -679,7 +701,7 @@ class B2BController extends Controller
             "tgllhr_pasangan"=>$request->tanggal_lahir_pasangan,
             "hp_pasangan"=>$request->hp_pasangan,        
         ));
-        
+
         $sha256 =  strtolower(hash('sha256', $requestbody));
         $plaintex = 'POST:/btnproperti/snap/v1/b2b/sme-loan/insert-application:'.$token.':'.$sha256.':'.$timestamps;
         $signature = base64_encode(hash_hmac('sha512', 	$plaintex, $secretkey, true));
@@ -694,12 +716,20 @@ class B2BController extends Controller
             "CHANNEL-ID: API",
             'Content-Type: application/json'
         );
-        // print_r($array_header);die;
+
         $response = $this->callAPI($method, $url, $requestbody, $array_header, $timestamps);
         $result = json_decode($response);
-        echo "<pre>";
-        print_r($result);
-        echo "<pre>";
+        if ($result->message == 'Success - OK') {
+            if(!empty($result->data)){
+                $data = $result->data; 
+            }else{
+                $data = []; 
+            }
+        } else {
+            $data = []; 
+        }
+
+        return Datatables::of($data)->addIndexColumn()->toJson(true);
     }   
     
     function callAPI($method, $url, $data, $headers = false,  $timestamps)

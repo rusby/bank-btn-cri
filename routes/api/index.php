@@ -51,46 +51,46 @@ Route::get('/general/kodepos', 'Api\general\Kodepos@main')->name('api.get.kodepo
 // Route::group(['middleware' => ['auth:sanctum'] ], function () {
 // 	// B2B
 // });
-Route::get('financeType', 'BTN\B2BController@financeType')->name('financeType');
-Route::get('loanType', 'BTN\B2BController@loanType')->name('loanType');
-Route::get('employmentType', 'BTN\B2BController@employmentType')->name('employmentType');
-Route::get('searchProvince', 'BTN\B2BController@searchProvince')->name('searchProvince');
 
-Route::get('searchCity', 'BTN\B2BController@searchCity')->name('searchCity');
-Route::get('searchDistrict', 'BTN\B2BController@searchDistrict')->name('searchDistrict');
-Route::get('searchSubDistrict', 'BTN\B2BController@searchSubDistrict')->name('searchSubDistrict');
-Route::get('searchPostCodeLocation', 'BTN\B2BController@searchPostCodeLocation')->name('searchPostCodeLocation');
-Route::get('searchBranchOffice', 'BTN\B2BController@searchBranchOffice')->name('searchBranchOffice');
+Route::get('financeType', 'Api\BTN\B2BController@financeType')->name('financeType');
+Route::get('loanType', 'Api\BTN\B2BController@loanType')->name('loanType');
+Route::get('employmentType', 'Api\BTN\B2BController@employmentType')->name('employmentType');
+Route::get('searchProvince', 'Api\BTN\B2BController@searchProvince')->name('searchProvince');
 
-Route::post('housingLoanInsertApplicationNonstock', 'BTN\B2BController@housingLoanInsertApplicationNonstock')->name('housingLoanInsertApplicationNonstock');
-Route::get('housingLoanApplicationList', 'BTN\B2BController@housingLoanApplicationList')->name('housingLoanApplicationList');
-Route::post('smeLoanInsertApplication', 'BTN\B2BController@smeLoanInsertApplication')->name('smeLoanInsertApplication');
+Route::get('searchCity', 'Api\BTN\B2BController@searchCity')->name('searchCity');
+Route::get('searchDistrict', 'Api\BTN\B2BController@searchDistrict')->name('searchDistrict');
+Route::get('searchSubDistrict', 'Api\BTN\B2BController@searchSubDistrict')->name('searchSubDistrict');
+Route::get('searchPostCodeLocation', 'Api\BTN\B2BController@searchPostCodeLocation')->name('searchPostCodeLocation');
+Route::get('searchBranchOffice', 'Api\BTN\B2BController@searchBranchOffice')->name('searchBranchOffice');
 
-Route::get('propertySearch', 'BTN\PropertyController@propertySearch')->name('propertySearch');
-Route::get('retrieveHousing', 'BTN\PropertyController@retrieveHousing')->name('retrieveHousing');
-Route::get('retrieveHousingById', 'BTN\PropertyController@retrieveHousingById')->name('retrieveHousingById');
-Route::get('retrieveHouseType', 'BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
-Route::get('retrieveHouseTypeById', 'BTN\PropertyController@retrieveHouseTypeById')->name('retrieveHouseTypeById');
-Route::get('retrieveHouseLot', 'BTN\PropertyController@retrieveHouseLot')->name('retrieveHouseLot');
-Route::get('retrieveHouseLotById', 'BTN\PropertyController@retrieveHouseLotById')->name('retrieveHouseLotById');
-Route::get('retrieveDeveloperById', 'BTN\PropertyController@retrieveDeveloperById')->name('retrieveDeveloperById');
-Route::get('retrieveNearbyHousing', 'BTN\PropertyController@retrieveNearbyHousing')->name('retrieveNearbyHousing');
+Route::post('housingLoanInsertApplicationNonstock', 'Api\BTN\B2BController@housingLoanInsertApplicationNonstock')->name('housingLoanInsertApplicationNonstock');
+Route::get('housingLoanApplicationList', 'Api\BTN\B2BController@housingLoanApplicationList')->name('housingLoanApplicationList');
+Route::post('smeLoanInsertApplication', 'Api\BTN\B2BController@smeLoanInsertApplication')->name('smeLoanInsertApplication');
+
+Route::get('propertySearch', 'Api\BTN\PropertyController@propertySearch')->name('propertySearch');
+Route::get('retrieveHousing', 'Api\BTN\PropertyController@retrieveHousing')->name('retrieveHousing');
+Route::get('retrieveHousingById', 'Api\BTN\PropertyController@retrieveHousingById')->name('retrieveHousingById');
+Route::get('retrieveHouseType', 'Api\BTN\PropertyController@retrieveHouseType')->name('retrieveHouseType');
+Route::get('retrieveHouseTypeById', 'Api\BTN\PropertyController@retrieveHouseTypeById')->name('retrieveHouseTypeById');
+Route::get('retrieveHouseLot', 'Api\BTN\PropertyController@retrieveHouseLot')->name('retrieveHouseLot');
+Route::get('retrieveHouseLotById', 'Api\BTN\PropertyController@retrieveHouseLotById')->name('retrieveHouseLotById');
+Route::get('retrieveDeveloperById', 'Api\BTN\PropertyController@retrieveDeveloperById')->name('retrieveDeveloperById');
+Route::get('retrieveNearbyHousing', 'Api\BTN\PropertyController@retrieveNearbyHousing')->name('retrieveNearbyHousing');
 
 // BTN Submission
-Route::get('initialEntry', 'BTN\SubmissionController@initialEntry')->name('initialEntry');
-Route::get('submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
-Route::get('personalInformation', 'BTN\SubmissionController@personalInformation')->name('personalInformation');
-Route::get('spouseInformation', 'BTN\SubmissionController@spouseInformation')->name('spouseInformation');
-Route::get('jobInformation', 'BTN\SubmissionController@jobInformation')->name('jobInformation');
-Route::get('loanApplication', 'BTN\SubmissionController@loanApplication')->name('loanApplication');
-Route::get('uploadDocument', 'BTN\SubmissionController@uploadDocument')->name('uploadDocument');
-Route::get('removeDocument', 'BTN\SubmissionController@removeDocument')->name('removeDocument');
-Route::get('confirmDocument', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
-Route::get('submitFinal', 'BTN\SubmissionController@submitFinal')->name('submitFinal');
-Route::get('entryDetail', 'BTN\SubmissionController@entryDetail')->name('entryDetail');
-Route::get('entryTracking', 'BTN\SubmissionController@entryTracking')->name('entryTracking');
+Route::get('initialEntry', 'Api\BTN\SubmissionController@initialEntry')->name('initialEntry');
+Route::get('submissiontab', 'Api\BTN\SubmissionController@submissiontab')->name('submissiontab');
+Route::get('personalInformation', 'Api\BTN\SubmissionController@personalInformation')->name('personalInformation');
+Route::get('spouseInformation', 'Api\BTN\SubmissionController@spouseInformation')->name('spouseInformation');
+Route::get('jobInformation', 'Api\BTN\SubmissionController@jobInformation')->name('jobInformation');
+Route::get('loanApplication', 'Api\BTN\SubmissionController@loanApplication')->name('loanApplication');
+Route::get('uploadDocument', 'Api\BTN\SubmissionController@uploadDocument')->name('uploadDocument');
+Route::get('removeDocument', 'Api\BTN\SubmissionController@removeDocument')->name('removeDocument');
+Route::get('confirmDocument', 'Api\BTN\SubmissionController@confirmDocument')->name('confirmDocument');
+Route::get('submitFinal', 'Api\BTN\SubmissionController@submitFinal')->name('submitFinal');
+Route::get('entryDetail', 'Api\BTN\SubmissionController@entryDetail')->name('entryDetail');
+Route::get('entryTracking', 'Api\BTN\SubmissionController@entryTracking')->name('entryTracking');
 
 // BTN Simulation
-Route::get('simulationHousingLoanConventional', 'BTN\SimulationController@simulationHousingLoanConventional')->name('simulationHousingLoanConventional');
-Route::get('simulationHousingLoanSharia', 'BTN\SimulationController@simulationHousingLoanSharia')->name('simulationHousingLoanSharia');
-
+Route::get('simulationHousingLoanConventional', 'Api\BTN\SimulationController@simulationHousingLoanConventional')->name('simulationHousingLoanConventional');
+Route::get('simulationHousingLoanSharia', 'Api\BTN\SimulationController@simulationHousingLoanSharia')->name('simulationHousingLoanSharia');
