@@ -79,6 +79,17 @@ Route::get('retrieveNearbyHousing', 'Api\BTN\PropertyController@retrieveNearbyHo
 
 
 // BTN Submission
+Route::post('initial-entry', 'Api\BTN\SubmissionController@initialEntry')->name('initialEntry');
+Route::post('personal-information', 'Api\BTN\SubmissionController@personalInformation')->name('personalInformation');
+Route::post('spouse-information', 'Api\BTN\SubmissionController@spouseInformation')->name('spouseInformation');
+Route::post('job-information', 'Api\BTN\SubmissionController@jobInformation')->name('jobInformation');
+Route::post('loan-application', 'Api\BTN\SubmissionController@loanApplication')->name('loanApplication');
+Route::post('upload-document', 'Api\BTN\SubmissionController@uploadDocument')->name('uploadDocument');
+Route::get('removeDocument', 'BTN\SubmissionController@removeDocument')->name('removeDocument');
+Route::post('confirm-document', 'BTN\SubmissionController@confirmDocument')->name('confirmDocument');
+Route::get('submitFinal', 'BTN\SubmissionController@submitFinal')->name('submitFinal');
+Route::get('entryDetail', 'BTN\SubmissionController@entryDetail')->name('entryDetail');
+Route::get('entryTracking', 'BTN\SubmissionController@entryTracking')->name('entryTracking');
 Route::get('initialEntry', 'Api\BTN\SubmissionController@initialEntry')->name('initialEntry');
 Route::get('submissiontab', 'Api\BTN\SubmissionController@submissiontab')->name('submissiontab');
 Route::get('personalInformation', 'Api\BTN\SubmissionController@personalInformation')->name('personalInformation');

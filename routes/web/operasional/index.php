@@ -60,6 +60,14 @@ Route::group(['prefix' => 'operasional', 'as' => 'operasional.', 'middleware' =>
 	Route::get('retrievehousenearbytab', 'BTN\PropertyController@retrievehousenearbytab')->name('retrievehousenearbytab');
 	Route::get('searchdatapropertiestab', 'BTN\PropertyController@searchdatapropertiestab')->name('searchdatapropertiestab');
 
+	Route::get('operasional/initialentrytab', 'BTN\SubmissionController@initialentrytab')->name('initialentrytab');
+	Route::get('operasional/personalinformationtab', 'BTN\SubmissionController@personalinformationtab')->name('personalinformationtab');
+	Route::get('operasional/spouseinformationtab', 'BTN\SubmissionController@spouseinformationtab')->name('spouseinformationtab');
+	Route::get('operasional/jobinformationtab', 'BTN\SubmissionController@jobinformationtab')->name('jobinformationtab');
+	Route::get('operasional/loanapplicationtab', 'BTN\SubmissionController@loanapplicationtab')->name('loanapplicationtab');
+	Route::get('operasional/uploaddocumenttab', 'BTN\SubmissionController@uploaddocumenttab')->name('uploaddocumenttab');
+	Route::get('operasional/confirmdocumenttab', 'BTN\SubmissionController@confirmdocumenttab')->name('confirmdocumenttab');
+
 	Route::get('simulationtab', 'BTN\SimulationController@simulationtab')->name('simulationtab');
 	Route::get('HousingLoanConventionaltab', 'BTN\SimulationController@HousingLoanConventionaltab')->name('HousingLoanConventionaltab');
 	Route::get('HousingLoanShariatab', 'BTN\SimulationController@HousingLoanShariatab')->name('HousingLoanShariatab');
