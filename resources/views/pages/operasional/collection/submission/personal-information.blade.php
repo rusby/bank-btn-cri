@@ -18,7 +18,7 @@
                 </div>      
                 <div class="form-group col-md-6 form-tgl_lahir">
                     <label for="tgl_lahir">Tanggal Lahir</label>
-                    <input type="date" class="form-control" name="tgl_lahir" placeholder="Tanggal Lahir" id="tgl_lahir">
+                    <input type="text" class="form-control" name="tgl_lahir" placeholder="Tanggal Lahir" id="tgl_lahir">
                 </div>
                 <div class="form-group col-md-6 form-alamat">
                     <label for="alamat">Alamat</label>
@@ -87,11 +87,10 @@
  <script>
     getDataProvice();
 
-    flatpickr('#tanggal_lahir', {dateFormat: "Y-m-d"});
+    flatpickr('#tgl_lahir', {dateFormat: "Y-m-d"});
     
     $("#form_personalinformation").submit(function(e) {
         e.preventDefault();
-        // var tanggal_lahir = $('#tanggal_lahir').val();
         const fd = new FormData(this);
         $("#btn-savedata").text('Adding...');
         $.ajax({

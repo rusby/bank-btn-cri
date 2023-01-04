@@ -18,7 +18,7 @@
                 </div>      
                 <div class="form-group col-md-6 form-tgl_lahir_pasangan">
                     <label for="tgl_lahir_pasangan">Tanggal Lahir Pasangan</label>
-                    <input type="date" class="form-control" name="tgl_lahir_pasangan" placeholder="Tanggal Lahir" id="tgl_lahir_pasangan">
+                    <input type="text" class="form-control" name="tgl_lahir_pasangan" placeholder="Tanggal Lahir" id="tgl_lahir_pasangan">
                 </div>
                 <div class="form-group col-md-12 form-no_telp">
                     <button type="submit" class="btn btn-success mx-2 my-2 float-left savedata" id="btn-savedata">Save</button>   
@@ -29,7 +29,7 @@
 </div>
 
  <script>
-    
+    flatpickr('#tgl_lahir_pasangan', {dateFormat: "Y-m-d"});
     $("#form_spouseinformation").submit(function(e) {
         e.preventDefault();
         const fd = new FormData(this);
