@@ -11,5 +11,13 @@ class SimulationController extends Controller
 {
     function simulationtab(){
         return view('pages.operasional.collection.simulation.index');
+    }  
+    
+    function HousingLoanConventionaltab(){
+        return view('pages.operasional.collection.simulation.housingloan-conventional');
+    } 
+       
+    function HousingLoanShariatab(){
+        return view('pages.operasional.collection.simulation.housingloan-sharia');
     }    
 }

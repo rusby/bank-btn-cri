@@ -83,7 +83,7 @@ class SimulationController extends Controller
         );
         $response = $this->callAPI($method, $url, $requestbody, $array_header, $timestamps);
         $result = json_decode($response);
-        if ($result->message == 'Success - OK') {
+        if ($result->Output == 'Get data success') {
             $data =$result->Data; 
         } else {
             $data = []; 

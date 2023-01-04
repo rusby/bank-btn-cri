@@ -3,12 +3,12 @@
         <button class="tablinks active" style="color:#fff;" onclick="openSimulationtab(event, 'HousingLoanConventional')">Housing Loan Conventional </button>
         <button class="tablinks" onclick="openSimulationtab(event, 'HousingLoanSharia')">Housing Loan Sharia </button>
     </div>
-    <div id="HousingLoanConventional" class="tabcontent">
+    <div id="HousingLoanConventional" class="tabcontent" style="display:block;">
         @include('pages.operasional.collection.simulation.housingloan-conventional')
     </div>
 
-    <div id="HousingLoanSharia" class="tabcontent w3-animate-opacity" style="display:none;">
-        @include('pages.operasional.collection.simulation.housingloan-sharia')
+    <div id="HousingLoanSharia" class="tabcontent w3-animate-opacity" style="display:none;"    >
+       
     </div>
 </div>
 
@@ -35,11 +35,16 @@
             
 		document.getElementById(pages).style.display = "block";
         evt.currentTarget.style.color = "#FFF";
-		evt.currentTarget.className += " active";       
+		evt.currentTarget.className += " active";    
+        if(pages =='HousingLoanSharia'){
+            $('#HousingLoanSharia').load('{{ route("operasional.HousingLoanShariatab") }}');
+        }else{
+            $('#HousingLoanConventional').load('{{ route("operasional.HousingLoanConventionaltab") }}');
+        }   
 	} 
    
     function getDataConventional(){      
-        $("#table-conventional").show();
+        // $("#table-conventional").show();
         var jenis_simulasi = $("#jenis_simulasi").val();
         var jenis_suku_bunga = $("#jenis_suku_bunga").val();
         var sub_or_nonsub = $("#sub_or_nonsub").val();

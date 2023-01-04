@@ -61,6 +61,10 @@ Route::group(['prefix' => 'operasional', 'as' => 'operasional.', 'middleware' =>
 	Route::get('searchdatapropertiestab', 'BTN\PropertyController@searchdatapropertiestab')->name('searchdatapropertiestab');
 
 	Route::get('simulationtab', 'BTN\SimulationController@simulationtab')->name('simulationtab');
+	Route::get('HousingLoanConventionaltab', 'BTN\SimulationController@HousingLoanConventionaltab')->name('HousingLoanConventionaltab');
+	Route::get('HousingLoanShariatab', 'BTN\SimulationController@HousingLoanShariatab')->name('HousingLoanShariatab');
+
+
 	Route::get('submissiontab', 'BTN\SubmissionController@submissiontab')->name('submissiontab');
 
 	// Route::get('operasional/propertySearch', 'BTN\PropertyController@propertySearch')->name('propertySearch');
